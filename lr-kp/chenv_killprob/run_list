@@ -1,0 +1,45 @@
+set email tasneempierce@gmail.com  # User's e-mail address
+
+set freq_email Crash    # Frequency status is e-mailed to you.  Choices are:
+                        #   job -- when this job is completed (default)
+                        #   run -- when each run is completed
+                        #   crash -- when a run crashes
+                        #   never -- no e-mail is sent
+
+set priority 2          # Priority of the job.  Normally an integer between 1
+                        # (low priority) and 5 (high priority)  where 3 is the
+                        # default priority.
+
+set description ch. env & killprob # Description of the job to run
+
+set class_pref 6,7,5 # List in order of preference which class of computers
+                        # Default = 6,7,5,4
+
+set max_cpus 100         # Maximum number of CPUs that this job can run on
+                        # default=20
+
+
+#set config_dir config  # directory containing input and executable files
+                        # if name has leading / use the absolute path name
+                        # else use a path relative to the directory
+                        # containing this run_list file
+
+
+#kills 99% every time the environment changes
+100..149 hdiv2_kp_003_1000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv2.cfg -def INST_SET instset-heads-hdiv2.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+200..249 hdiv3_kp_003_1000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv3.cfg -def INST_SET instset-heads-hdiv3.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+300..349 hdiv10_kp_003_1000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv10.cfg -def INST_SET instset-heads-hdiv10.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+
+#kills 99% every time the environment changes to reward set 1
+400..449 hdiv2_kp_003_2000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv2-2000.cfg -def INST_SET instset-heads-hdiv2.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+500..549 hdiv3_kp_003_2000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv3-2000.cfg -def INST_SET instset-heads-hdiv3.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+600..649 hdiv10_kp_003_2000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv10-2000.cfg -def INST_SET instset-heads-hdiv10.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+
+
+#kills 99% every time the environment changes to reward set 2
+700..749 hdiv2_kp_003_2000flip avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv2-2000-flip.cfg -def INST_SET instset-heads-hdiv2.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+800..849 hdiv3_kp_003_2000flip avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv3-2000-flip.cfg -def INST_SET instset-heads-hdiv3.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+900..949 hdiv10_kp_003_2000flip avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events-hdiv10-2000-flip.cfg -def INST_SET instset-heads-hdiv10.cfg -set COPY_MUT_PROB 0.0 -set DIVIDE_INS_PROB 0.00 -set DIVIDE_DEL_PROB 0.00
+
+
+#runs with 100k updates, changing environments every 1000 updates, div_mut 0.003, kill 99% every 1000 updates or 200 updates

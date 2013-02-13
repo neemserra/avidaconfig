@@ -1,0 +1,28 @@
+set email tasneempierce@gmail.com  # User's e-mail address
+
+set freq_email Crash    # Frequency status is e-mailed to you.  Choices are:
+                        #   job -- when this job is completed (default)
+                        #   run -- when each run is completed
+                        #   crash -- when a run crashes
+                        #   never -- no e-mail is sent
+
+set priority 3          # Priority of the job.  Normally an integer between 1
+                        # (low priority) and 5 (high priority)  where 3 is the
+                        # default priority.
+
+set description hdiv1  # Description of the job to run
+
+set class_pref 6,7,5 # List in order of preference which class of computers
+                        # Default = 6,7,5,4
+
+set max_cpus 50         # Maximum number of CPUs that this job can run on
+                        # default=20
+
+
+#set config_dir config  # directory containing input and executable files
+                        # if name has leading / use the absolute path name
+                        # else use a path relative to the directory
+                        # containing this run_list file
+
+3800..3849 divmut_hdivide1 avida -s $seed -set DIV_MUT_PROB 0.01
+

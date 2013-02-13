@@ -1,0 +1,72 @@
+set email tasneempierce@gmail.com  # User's e-mail address
+
+set freq_email Crash    # Frequency status is e-mailed to you.  Choices are:
+                        #   job -- when this job is completed (default)
+                        #   run -- when each run is completed
+                        #   crash -- when a run crashes
+                        #   never -- no e-mail is sent
+
+set priority 3          # Priority of the job.  Normally an integer between 1
+                        # (low priority) and 5 (high priority)  where 3 is the
+                        # default priority.
+
+set description hdiv10 changing environments # Description of the job to run
+
+set class_pref 6,7,5 # List in order of preference which class of computers
+                        # Default = 6,7,5,4
+
+set max_cpus 50         # Maximum number of CPUs that this job can run on
+                        # default=20
+
+
+#set config_dir config  # directory containing input and executable files
+                        # if name has leading / use the absolute path name
+                        # else use a path relative to the directory
+                        # containing this run_list file
+
+#100..149 divmut_10env avida -s $seed -set DIV_MUT_PROB 0.10 -set EVENT_FILE events.cfg
+#200..249 divmut_10env500 avida -s $seed -set DIV_MUT_PROB 0.10 -set EVENT_FILE events500.cfg
+#300..349 divmut_10env1000 avida -s $seed -set DIV_MUT_PROB 0.10 -set EVENT_FILE events1000.cfg
+#400..449 divmut_10env1500 avida -s $seed -set DIV_MUT_PROB 0.10 -set EVENT_FILE events1500.cfg
+#500..549 divmut_10env2000 avida -s $seed -set DIV_MUT_PROB 0.10 -set EVENT_FILE events2000.cfg
+#600..649 divmut_03env avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events.cfg
+#700..749 divmut_03env500 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events500.cfg
+#800..849 divmut_03env1000 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events1000.cfg
+#900..949 divmut_03env1500 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events1500.cfg
+#1000..1049 divmut_03env2000 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events2000.cfg
+#1100..1149 divmut_01env avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events.cfg
+#1200..1249 divmut_01env500 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events500.cfg
+#1300..1349 divmut_01env1000 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events1000.cfg
+#1400..1449 divmut_01env1500 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events1500.cfg
+#1500..1549 divmut_01env2000 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events2000.cfg
+#1600..1649 divmut_003env avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events.cfg
+#1700..1749 divmut_003env500 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events500.cfg
+#1800..1849 divmut_003env1000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events1000.cfg
+#1900..1949 divmut_003env1500 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events1500.cfg
+#2000..2049 divmut_003env2000 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events2000.cfg
+#2100..2149 divmut_001env avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events.cfg
+#2200..2249 divmut_001env500 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events500.cfg
+#2300..2349 divmut_001env1000 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events1000.cfg
+#2400..2449 divmut_001env1500 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events1500.cfg
+#2500..2549 divmut_001env2000 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events2000.cfg
+
+
+#env = static environment
+#env500 rewards and punishments change every 500 updates; number behind updates represents the change
+#different div_mut = 0.1. 0.03, 0.01, 0.003, 0.001 (.3 instead of .5 because it's an exponential half point)
+#50 runs to verify previous results and try different parameters in environment switch time and intermediate mutation rates
+#all of these are hdiv10 (instruction set file)
+
+ 
+2600..2649 divmut_03env100 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events100.cfg
+2700..2749 divmut_03env250 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events250.cfg
+2800..2849 divmut_03env750 avida -s $seed -set DIV_MUT_PROB 0.03 -set EVENT_FILE events750.cfg
+2900..2949 divmut_01env100 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events100.cfg
+3000..3049 divmut_01env250 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events250.cfg
+3100..3149 divmut_01env750 avida -s $seed -set DIV_MUT_PROB 0.01 -set EVENT_FILE events750.cfg
+3200..3249 divmut_003env100 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events100.cfg
+3300..3349 divmut_003env250 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events250.cfg
+3400..3449 divmut_003env750 avida -s $seed -set DIV_MUT_PROB 0.003 -set EVENT_FILE events750.cfg
+3500..3549 divmut_001env100 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events100.cfg
+3600..3649 divmut_001env250 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events250.cfg
+3700..3749 divmut_001env750 avida -s $seed -set DIV_MUT_PROB 0.001 -set EVENT_FILE events750.cfg

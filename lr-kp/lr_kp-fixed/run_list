@@ -1,0 +1,54 @@
+set email tasneempierce@gmail.com  # User's e-mail address
+
+set freq_email Crash    # Frequency status is e-mailed to you.  Choices are:
+                        #   job -- when this job is completed (default)
+                        #   run -- when each run is completed
+                        #   crash -- when a run crashes
+                        #   never -- no e-mail is sent
+
+set priority 3          # Priority of the job.  Normally an integer between 1
+                        # (low priority) and 5 (high priority)  where 3 is the
+                        # default priority.
+
+set description limited resources hdiv # Description of the job to run
+
+set class_pref 6,7,5 # List in order of preference which class of computers
+                        # Default = 6,7,5,4
+
+set max_cpus 25         # Maximum number of CPUs that this job can run on
+                        # default=20
+
+
+#set config_dir config  # directory containing input and executable files
+                        # if name has leading / use the absolute path name
+                        # else use a path relative to the directory
+                        # containing this run_list file
+
+100..124 hdiv10_lr_kp avida -s $seed
+
+
+
+
+
+#runs with 500k updates, no changing environments, div_mut 0.003, kill 99% every 125 updates
+#limited resources by having 400x400 so 160k organisms, but only 100k resources every 125 updates
+#this limits the population to roughly 100,000, which is under the 160k cap
+#start with 1000 organisms
+#start adding in more resource at 125, every 125 updates
+#turn off all other mutations other than div_mut
+#required_resource: 0
+#max total stored: 1
+#req_resource_level: 1
+#use_resource_bins: 1
+#split on divide: 1
+#take out absorb_resource_fraction
+#add collect-unit-prob and hdiv10 to both the default heads and the instset
+#environment file: resource glucose: inital=100000
+#u 125:125 InjectResource glucose 100,000
+#u 125:125 KillProb 0.99 (only for the second round with kill prob)
+#turn off death
+#started with 50 resources, went up to 500k resources and made it to longer updates
+#population still died off so turned off death and added 10 times more resources (previous stuff)
+#then, they only got to 1400 generations, so now we are trying for more. 
+#they filled up the population at around 120 updates so we are doing it every 125
+#change birth method to 4 which is mass action like a flask

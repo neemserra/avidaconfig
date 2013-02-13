@@ -1,0 +1,132 @@
+# Thu Mar 24 16:30:16 2011
+# Filename........: archive/org-2396220.gen
+# Update Output...: N/A
+# Is Viable.......: 1
+# Repro Cycle Size: 0
+# Depth to Viable.: 0
+# 
+# Generation: 0
+# Merit...........: 204800.000000
+# Gestation Time..: 259
+# Fitness.........: 790.733591
+# Errors..........: 1
+# Genome Size.....: 103
+# Copied Size.....: 103
+# Executed Size...: 100
+# Offspring.......: SELF
+# 
+# Tasks Performed:
+# not 1 (1.000000)
+# nand 1 (1.000000)
+# and 0 (0.000000)
+# orn 1 (1.000000)
+# or 1 (1.000000)
+# andn 0 (0.000000)
+# nor 1 (1.000000)
+# xor 0 (0.000000)
+# equ 0 (0.000000)
+
+
+shift-l
+nop-A
+h-alloc
+nop-B
+h-search
+nop-C
+nop-A
+mov-head
+nop-C
+h-copy
+if-n-equ
+nop-C
+h-divide
+push
+h-divide
+sub
+h-copy
+set-flow
+h-copy
+inc
+nop-B
+push
+shift-l
+push
+swap
+if-n-equ
+if-label
+h-copy
+sub
+h-copy
+inc
+h-copy
+h-alloc
+h-copy
+swap-stk
+shift-r
+h-copy
+add
+nop-C
+sub
+inc
+pop
+swap-stk
+if-less
+h-divide
+if-less
+nop-C
+nop-A
+pop
+nop-C
+IO
+nop-C
+shift-r
+IO
+nop-A
+if-n-equ
+nop-C
+h-copy
+swap-stk
+nop-B
+push
+shift-r
+inc
+nop-C
+nop-C
+h-copy
+swap-stk
+sub
+nop-C
+if-n-equ
+h-copy
+push
+push
+nop-C
+add
+IO
+nand
+nand
+nop-C
+IO
+nop-C
+push
+nop-C
+h-divide
+sub
+IO
+nand
+set-flow
+swap
+nand
+IO
+IO
+nop-C
+h-search
+h-copy
+h-copy
+if-label
+nop-C
+nop-A
+h-divide10
+mov-head
+nop-A
+nop-B

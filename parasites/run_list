@@ -1,0 +1,48 @@
+set email tasneempierce@gmail.com  # User's e-mail address
+
+set freq_email Crash    # Frequency status is e-mailed to you.  Choices are:
+                        #   job -- when this job is completed (default)
+                        #   run -- when each run is completed
+                        #   crash -- when a run crashes
+                        #   never -- no e-mail is sent
+
+set priority 3          # Priority of the job.  Normally an integer between 1
+                        # (low priority) and 5 (high priority)  where 3 is the
+                        # default priority.
+
+set description parasites and virulence # Description of the job to run
+
+set class_pref 6,7,5 # List in order of preference which class of computers
+                        # Default = 6,7,5,4
+
+set max_cpus 40         # Maximum number of CPUs that this job can run on
+                        # default=20
+
+
+#set config_dir config  # directory containing input and executable files
+                        # if name has leading / use the absolute path name
+                        # else use a path relative to the directory
+                        # containing this run_list file
+
+#100..119 parasite-trial-run avida -s $seed
+#200..219 parasite-rewards avida -s $seed -set ENVIRONMENT_FILE environment-allrewards.cfg
+#300..319 parasite-virulence80-lr avida -s $seed -set INJECT_IS_VIRULENT 0 -set PARASITE_VIRULENCE 0.8 
+#400..419 parasite-virulence50-lr avida -s $seed -set INJECT_IS_VIRULENT 0 -set PARASITE_VIRULENCE 0.5
+#500..519 parasite-virulence30-lr avida -s $seed -set INJECT_IS_VIRULENT 0 -set PARASITE_VIRULENCE 0.3
+#600..619 parasite-virulence80-ar avida -s $seed -set INJECT_IS_VIRULENT 0 -set PARASITE_VIRULENCE 0.8 -set ENVIRONMENT_FILE environment-allrewards.cfg
+#700..719 parasite-virulence50-ar avida -s $seed -set INJECT_IS_VIRULENT 0 -set PARASITE_VIRULENCE 0.5 -set ENVIRONMENT_FILE environment-allrewards.cfg
+#800..819 parasite-virulence30-ar avida -s $seed -set INJECT_IS_VIRULENT 0 -set PARASITE_VIRULENCE 0.3 -set ENVIRONMENT_FILE environment-allrewards.cfg
+900..919 parasite-rewards-800 avida -s $seed -set ENVIRONMENT_FILE environment-allrewards.cfg -set EVENT_FILE events-moreparasites.cfg
+1000..1019 parasite-rewards-2000 avida -s $seed -set ENVIRONMENT_FILE environment-allrewards.cfg -set EVENT_FILE events-moreparasites2000.cfg
+1100..1119 parasite-lr-800 avida -s $seed -set EVENT_FILE events-moreparasites.cfg
+1200..1219 parasite-lr-2000 avida -s $seed -set EVENT_FILE events-moreparasites2000.cfg
+#1300..1319 parasite-uniform avida -s $seed -set ENVIRONMENT_FILE environment-uniform.cfg
+#1400..1419 parasite-uniformnot avida -s $seed -set ENVIRONMENT_FILE environment-uniformnot.cfg
+
+#Turn off all mutations except div_mut_prob at 0.003
+#Change inject_mut_prob to 0.003
+#inject_is_virulent changed to 1
+#parasite_virulence turned off
+#parasite_no_copy_mut changed to 0 so that the parasites can mutate
+#change events so that it ends at 50k updates
+#changed the instructions

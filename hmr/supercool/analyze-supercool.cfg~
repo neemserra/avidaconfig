@@ -1,0 +1,10 @@
+VERBOSE
+FORRANGE i 100 119
+    SET d /home/tpierce/supercool/divmut_01chenv_$i
+    PURGE_BATCH
+    SYSTEM gunzip $d/data/detail-100000.spop.gz
+    LOAD $d/data/detail-100000.spop
+    FIND_GENOTYPE num_cpus
+    RECALCULATE
+    DETAIL /home/tpierce/supercool/detailschenv/detail_01chenv_$i.dat inst.23 inst.24
+END
